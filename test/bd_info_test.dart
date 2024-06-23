@@ -1,5 +1,6 @@
 import 'package:bd_info/bd_info.dart';
 import 'package:bd_info/src/common/strings.dart';
+import 'package:bd_info/src/features/division_extension.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -88,5 +89,14 @@ void main() {
 
     }
 
+  });
+
+  test("check extension on division", () {
+    for (Division division in BdInfo.allDivisions) {
+      int countTotalUpazilas = division.allDistricts
+          .fold(0, (previous, element) => previous + element.totalUpazilas);
+
+      expect(countTotalUpazilas, division.toalUpazilas);
+    }
   });
 }

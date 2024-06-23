@@ -1,5 +1,5 @@
 import 'package:bd_info/bd_info.dart';
-import 'package:bd_info/src/common/strings.dart';
+import 'package:bd_info/src/features/district_extension.dart';
 import 'package:bd_info/src/features/division_extension.dart';
 import 'package:test/test.dart';
 
@@ -65,6 +65,7 @@ void main() {
     });
   });
 
+
   group('Verify District list data', () {
     test("district data length == basic info total district", () {
       expect(BdInfo.allDistricts.length, basicInfo.totalDistricts);
@@ -121,14 +122,14 @@ void main() {
 
   group('Verify upazila list data', () {
     test("upazila data length == basic info total upazila", () {
-      expect(BdInfo.allUpozilas.length, basicInfo.toalUpazilas);
+      expect(BdInfo.allUpazilas.length, basicInfo.toalUpazilas);
     });
 
     test(
         "filter upazila by division form upazila data == total upazila from division",
         () {
       for (Division division in BdInfo.allDivisions) {
-        List<Upazila> filterUpazilaByDivision = BdInfo.allUpozilas
+        List<Upazila> filterUpazilaByDivision = BdInfo.allUpazilas
             .where((item) => item.division == division.name)
             .toList();
 
@@ -140,12 +141,22 @@ void main() {
         "filter upazila by district form upazila data == total upazila from district",
         () {
       for (District district in BdInfo.allDistricts) {
-        List<Upazila> filterUpazilaByDistrict = BdInfo.allUpozilas
+        List<Upazila> filterUpazilaByDistrict = BdInfo.allUpazilas
             .where((item) => item.district == district.name)
             .toList();
 
         expect(filterUpazilaByDistrict.length, district.totalUpazilas);
       }
     });
+  });
+
+  test("check extension on district for allUpoazilas", () {
+    for (District district in BdInfo.allDistricts) {
+      List<Upazila> countTotalUpazilas = district.allUpazilas
+          .where((element) => element.district == district.name)
+          .toList();
+
+      expect(countTotalUpazilas.length, district.totalUpazilas);
+    }
   });
 }

@@ -5,7 +5,7 @@ extension AllDistrictsByDivsion on Division {
       .where((district) => district.division == name)
       .toList();
 
-  List<Upazila> get allUpoazilas => BdInfo.allUpozilas
+  List<Upazila> get allUpoazilas => BdInfo.allUpazilas
       .where((upazila) => upazila.division == name)
       .toList();
 }

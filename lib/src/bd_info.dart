@@ -25,5 +25,5 @@ class BdInfo {
 
   static List<District> get allDistricts => _DistrictList.districts;
 
-  static List<Upazila> get allUpozilas => _UpazilaList.upazilas;
+  static List<Upazila> get allUpazilas => _UpazilaList.upazilas;
 }

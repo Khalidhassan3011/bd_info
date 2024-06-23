@@ -18,6 +18,8 @@ part 'data/district_list.dart';
 
 part 'data/upazila_list.dart';
 
+part 'features/advanced_filter.dart';
+
 class BdInfo {
   static _BangladeshInfo get basicInfo => _BangladeshInfo();
 
@@ -26,4 +28,10 @@ class BdInfo {
   static List<District> get allDistricts => _DistrictList.districts;
 
   static List<Upazila> get allUpazilas => _UpazilaList.upazilas;
+
+  static Division whichDivision(dynamic model) =>
+      _AdvancedFilter.whichDivision(model);
+
+  static District whichDistrict(dynamic model) =>
+      _AdvancedFilter.whichDistrict(model);
 }

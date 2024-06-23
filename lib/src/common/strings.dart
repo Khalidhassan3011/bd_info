@@ -1,3 +1,6 @@
+// errors
+const String invalidModel = "Invalid model. please follow the documentaion";
+
 // division names
 const String dhaka = "Dhaka";
 const String chittagong = "Chittagong";

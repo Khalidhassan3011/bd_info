@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:bd_info/bd_info.dart';
+import 'package:bd_info/src/common/strings.dart';
 import 'package:bd_info/src/features/district_extension.dart';
 import 'package:bd_info/src/features/division_extension.dart';
 import 'package:test/test.dart';
@@ -112,7 +115,7 @@ void main() {
 
   test("check extension on division for allUpoazilas", () {
     for (Division division in BdInfo.allDivisions) {
-      List<Upazila> countTotalUpazilas = division.allUpoazilas
+      List<Upazila> countTotalUpazilas = division.allUpazilas
           .where((element) => element.division == division.name)
           .toList();
 
@@ -158,5 +161,72 @@ void main() {
 
       expect(countTotalUpazilas.length, district.totalUpazilas);
     }
+  });
+
+  test("check whichDivision function", () {
+
+    // filter By Division
+    Division division = BdInfo.whichDivision(BdInfo.allDivisions.first);
+    expect(division, BdInfo.allDivisions.first);
+
+    // filter By Division Randomly
+    int randomNumber = Random().nextInt(BdInfo.allDivisions.length);
+    division = BdInfo.whichDivision(BdInfo.allDivisions[randomNumber]);
+    expect(division, BdInfo.allDivisions[randomNumber]);
+
+    // filter By District
+    division = BdInfo.whichDivision(BdInfo.allDistricts.first);
+    expect(division.name, BdInfo.allDistricts.first.division);
+
+    // filter By District Randomly
+    randomNumber = Random().nextInt(BdInfo.allDistricts.length);
+    division = BdInfo.whichDivision(BdInfo.allDistricts[randomNumber]);
+    expect(division.name, BdInfo.allDistricts[randomNumber].division);
+
+    // filter By Upazila
+    division = BdInfo.whichDivision(BdInfo.allUpazilas.first);
+    expect(division.name, BdInfo.allUpazilas.first.division);
+
+    // filter By Upazila Randomly
+    randomNumber = Random().nextInt(BdInfo.allUpazilas.length);
+    division = BdInfo.whichDivision(BdInfo.allUpazilas[randomNumber]);
+    expect(division.name, BdInfo.allUpazilas[randomNumber].division);
+
+    // other check
+    try {
+      BdInfo.whichDivision(null);
+    } catch (e) {
+      expect(e, invalidModel);
+    }
+
+  });
+
+  test("check whichDivision function", () {
+
+    // filter by district
+    District district =  BdInfo.whichDistrict(BdInfo.allDistricts.first);
+    expect(district, BdInfo.allDistricts.first);
+
+    // filter By district Randomly
+    int randomNumber = Random().nextInt(BdInfo.allDistricts.length);
+    district = BdInfo.whichDistrict(BdInfo.allDistricts[randomNumber]);
+    expect(district, BdInfo.allDistricts[randomNumber]);
+
+    // filter By Upazila
+    district = BdInfo.whichDistrict(BdInfo.allUpazilas.first);
+    expect(district.name, BdInfo.allUpazilas.first.district);
+
+    // filter By Upazila Randomly
+    randomNumber = Random().nextInt(BdInfo.allUpazilas.length);
+    district = BdInfo.whichDistrict(BdInfo.allUpazilas[randomNumber]);
+    expect(district.name, BdInfo.allUpazilas[randomNumber].district);
+
+    // other check
+    try {
+      BdInfo.whichDistrict(null);
+    } catch (e) {
+      expect(e, invalidModel);
+    }
+
   });
 }

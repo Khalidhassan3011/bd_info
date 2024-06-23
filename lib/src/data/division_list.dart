@@ -81,7 +81,7 @@ class _DivisionList {
           isoCode: "BD-A",
           establish: 1993,
           totalDistricts: 6,
-          toalUpazilas: 41,
+          toalUpazilas: 42,
           totalUnionCouncils: 352,
           area: 13225.20,
           population: 9100102,

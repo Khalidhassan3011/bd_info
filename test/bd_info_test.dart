@@ -1,4 +1,5 @@
 import 'package:bd_info/bd_info.dart';
+import 'package:bd_info/src/common/strings.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -23,43 +24,69 @@ void main() {
 
   group('Verify Division list data', () {
     test("verify totalDivisions count", () {
-      expect(basicInfo.totalDivisions, equals(BdInfo.allDivision.length));
+      expect(BdInfo.allDivisions.length, basicInfo.totalDivisions);
     });
 
     test("verify totalDistricts count", () {
-      int totalDistrictsFromDivisionList = BdInfo.allDivision.fold(
+      int totalDistrictsFromDivisionList = BdInfo.allDivisions.fold(
           0, (previousValue, item) => previousValue + item.totalDistricts);
 
-      expect(basicInfo.totalDistricts, equals(totalDistrictsFromDivisionList));
+      expect(totalDistrictsFromDivisionList, basicInfo.totalDistricts);
     });
 
     test("verify toalUpazilas count", () {
-      int totalUpazilasFromDivisionList = BdInfo.allDivision
+      int totalUpazilasFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.toalUpazilas);
 
-      expect(basicInfo.toalUpazilas, equals(totalUpazilasFromDivisionList));
+      expect(totalUpazilasFromDivisionList, basicInfo.toalUpazilas);
     });
 
     test("verify Union Councils count", () {
-      int totalUnionCouncilsFromDivisionList = BdInfo.allDivision.fold(
+      int totalUnionCouncilsFromDivisionList = BdInfo.allDivisions.fold(
           0, (previousValue, item) => previousValue + item.totalUnionCouncils);
 
-      expect(basicInfo.totalUnionCouncils,
-          equals(totalUnionCouncilsFromDivisionList));
+      expect(totalUnionCouncilsFromDivisionList, basicInfo.totalUnionCouncils);
     });
 
     test("verify area", () {
-      double areaFromDivisionList = BdInfo.allDivision
+      double areaFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.area);
 
-      expect(basicInfo.area, equals(areaFromDivisionList));
+      expect(areaFromDivisionList, basicInfo.area);
     });
 
     test("verify population", () {
-      int populationFromDivisionList = BdInfo.allDivision
+      int populationFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.population);
 
-      expect(basicInfo.population, equals(populationFromDivisionList));
+      expect(populationFromDivisionList, basicInfo.population);
     });
+  });
+
+  group("Verify District list data", () {
+
+    test("verify total District count", () {
+      expect(BdInfo.allDistricts.length, basicInfo.totalDistricts);
+    });
+
+    for (var division in BdInfo.allDivisions) {
+
+      List<District> filterDistrictsByDivision = BdInfo.allDistricts
+          .where((item) => item.division == division.name)
+          .toList();
+
+      int countUpozila = filterDistrictsByDivision.fold(0,
+              (previousValue, item) => previousValue + item.totalUpazilas);
+
+      test("District count based on basic info", () {
+        expect(filterDistrictsByDivision.length, division.totalDistricts);
+      });
+
+      test("upazila count based on basic info", () {
+        expect(countUpozila, division.toalUpazilas);
+      });
+
+    }
+
   });
 }

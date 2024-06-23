@@ -95,7 +95,7 @@ class _BangladeshInfo {
     this.phoneCode = "+880",
     this.totalDivisions = 8,
     this.totalDistricts = 64,
-    this.toalUpazilas = 493,
+    this.toalUpazilas = 494,
     this.totalUnionCouncils = 4546,
     this.area = 147569.06,
     this.population = 165158616,

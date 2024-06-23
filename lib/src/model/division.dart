@@ -18,7 +18,7 @@ class Division {
   final int toalUpazilas;
 
   // Total number of union councils in the division
-  final int totalUnionCouncils;
+  final int totalUnion;
 
   // Area of the division (in square kilometers)
   final double area;
@@ -37,7 +37,7 @@ class Division {
     required this.establish,
     required this.totalDistricts,
     required this.toalUpazilas,
-    required this.totalUnionCouncils,
+    required this.totalUnion,
     required this.area,
     required this.population,
     required this.density,

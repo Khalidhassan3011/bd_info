@@ -65,7 +65,7 @@ class _BangladeshInfo {
   int toalUpazilas;
 
   // Total number of union councils
-  int totalUnionCouncils;
+  int totalUnion;
 
   // Total area in square kilometers
   double area;
@@ -96,7 +96,7 @@ class _BangladeshInfo {
     this.totalDivisions = 8,
     this.totalDistricts = 64,
     this.toalUpazilas = 494,
-    this.totalUnionCouncils = 4546,
+    this.totalUnion = 4546,
     this.area = 147569.06,
     this.population = 165158616,
     this.density = 1119,
@@ -169,7 +169,7 @@ class _BangladeshInfo {
     
     Total Districts -> $totalDistricts
     Total Upazilas -> $toalUpazilas
-    Total Union Councils -> $totalUnionCouncils
+    Total Union Councils -> $totalUnion
     Area -> $area
     Population -> $population
     Density -> $density

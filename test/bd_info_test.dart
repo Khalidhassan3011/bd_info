@@ -23,7 +23,6 @@ void main() {
     }
   });
 
-
   group('Verify Division list data', () {
     test("division data length == basic info total division", () {
       expect(BdInfo.allDivisions.length, basicInfo.totalDivisions);
@@ -44,8 +43,8 @@ void main() {
     });
 
     test("sum of union form division data == basic info total union", () {
-      int totalUnionCouncilsFromDivisionList = BdInfo.allDivisions.fold(
-          0, (previousValue, item) => previousValue + item.totalUnion);
+      int totalUnionCouncilsFromDivisionList = BdInfo.allDivisions
+          .fold(0, (previousValue, item) => previousValue + item.totalUnion);
 
       expect(totalUnionCouncilsFromDivisionList, basicInfo.totalUnion);
     });
@@ -57,7 +56,8 @@ void main() {
       expect(areaFromDivisionList, basicInfo.area);
     });
 
-    test("sum of population form division data == basic info total population", () {
+    test("sum of population form division data == basic info total population",
+        () {
       int populationFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.population);
 
@@ -65,45 +65,42 @@ void main() {
     });
   });
 
-
   group('Verify District list data', () {
-
     test("district data length == basic info total district", () {
       expect(BdInfo.allDistricts.length, basicInfo.totalDistricts);
     });
 
-    test("filter district by division form district data == total district form division", () {
+    test(
+      "filter district by division form district data == total district form division",
+      () {
+        for (var division in BdInfo.allDivisions) {
+          List<District> filterDistrictsByDivision = BdInfo.allDistricts
+              .where((item) => item.division == division.name)
+              .toList();
 
-      for (var division in BdInfo.allDivisions) {
+          expect(filterDistrictsByDivision.length, division.totalDistricts);
+        }
+      },
+    );
 
-        List<District> filterDistrictsByDivision = BdInfo.allDistricts
-            .where((item) => item.division == division.name)
-            .toList();
+    test(
+      "sum of upazila from filter district by division form district data == total upazila form division",
+      () {
+        for (var division in BdInfo.allDivisions) {
+          List<District> filterDistrictsByDivision = BdInfo.allDistricts
+              .where((item) => item.division == division.name)
+              .toList();
 
-        expect(filterDistrictsByDivision.length, division.totalDistricts);
+          int countUpozila = filterDistrictsByDivision.fold(
+              0, (previousValue, item) => previousValue + item.totalUpazilas);
 
-      }
-    });
-
-    test("sum of upazila from filter district by division form district data == total upazila form division", () {
-
-      for (var division in BdInfo.allDivisions) {
-
-        List<District> filterDistrictsByDivision = BdInfo.allDistricts
-            .where((item) => item.division == division.name)
-            .toList();
-
-        int countUpozila = filterDistrictsByDivision.fold(0,
-                (previousValue, item) => previousValue + item.totalUpazilas);
-
-        expect(countUpozila, division.toalUpazilas);
-
-      }
-    });
+          expect(countUpozila, division.toalUpazilas);
+        }
+      },
+    );
   });
 
-
-  test("check extension on division", () {
+  test("check extension on division for allDistricts", () {
     for (Division division in BdInfo.allDivisions) {
       int countTotalUpazilas = division.allDistricts
           .fold(0, (previous, element) => previous + element.totalUpazilas);
@@ -112,16 +109,25 @@ void main() {
     }
   });
 
+  test("check extension on division for allUpoazilas", () {
+    for (Division division in BdInfo.allDivisions) {
+      List<Upazila> countTotalUpazilas = division.allUpoazilas
+          .where((element) => element.division == division.name)
+          .toList();
+
+      expect(countTotalUpazilas.length, division.toalUpazilas);
+    }
+  });
 
   group('Verify upazila list data', () {
-
     test("upazila data length == basic info total upazila", () {
       expect(BdInfo.allUpozilas.length, basicInfo.toalUpazilas);
     });
 
-    test("filter upazila by division form upazila data == total upazila from division", () {
+    test(
+        "filter upazila by division form upazila data == total upazila from division",
+        () {
       for (Division division in BdInfo.allDivisions) {
-
         List<Upazila> filterUpazilaByDivision = BdInfo.allUpozilas
             .where((item) => item.division == division.name)
             .toList();
@@ -130,9 +136,10 @@ void main() {
       }
     });
 
-    test("filter upazila by district form upazila data == total upazila from district", () {
+    test(
+        "filter upazila by district form upazila data == total upazila from district",
+        () {
       for (District district in BdInfo.allDistricts) {
-
         List<Upazila> filterUpazilaByDistrict = BdInfo.allUpozilas
             .where((item) => item.district == district.name)
             .toList();
@@ -140,7 +147,5 @@ void main() {
         expect(filterUpazilaByDistrict.length, district.totalUpazilas);
       }
     });
-
   });
-
 }

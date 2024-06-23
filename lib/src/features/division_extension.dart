@@ -4,4 +4,8 @@ extension AllDistrictsByDivsion on Division {
   List<District> get allDistricts => BdInfo.allDistricts
       .where((district) => district.division == name)
       .toList();
+
+  List<Upazila> get allUpoazilas => BdInfo.allUpozilas
+      .where((upazila) => upazila.division == name)
+      .toList();
 }

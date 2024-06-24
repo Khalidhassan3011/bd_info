@@ -81,4 +81,10 @@ void main() {
 ```
 
 # Bugs or Requests
-Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [Issue](https://github.com/Khalidhassan3011/bd_info). 
+Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [issue](https://github.com/Khalidhassan3011/bd_info).Pull request are also welcome.
+
+## Contributors 
+
+<a href="https://github.com/Khalidhassan3011/bd_info/graphs/contributors"><img src="https://opencollective.com/bd_info/contributors.svg?width=890&button=false" /></a>
+
+Contributions of any kind welcome!

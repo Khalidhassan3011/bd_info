@@ -85,7 +85,7 @@ Contributions to improve and expand this package are welcome! If you have sugges
 
 ## Contributors 
 
-<a href="https://github.com/Khalidhassan3011/bd_info/graphs/contributors"><img src="https://avatars.githubusercontent.com/u/126274619?width=120&height=120&style=border-radius:50%" /></a>
+<a href="https://github.com/Khalidhassan3011/bd_info/graphs/contributors"><img src="https://avatars.githubusercontent.com/u/126274619?s=40&u=616ca9dc589c272ad73af9d4f67b41c364fa876c&v=4" /></a>
 
 
 

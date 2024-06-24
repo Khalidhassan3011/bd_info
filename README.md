@@ -43,96 +43,43 @@ import 'package:bd_info/bd_info.dart';
 ```
 ## Examples
 
-* Get Basic Information about Bangladesh 
-
 ```dart
 void main() {
+
+  //Get BasicInfo About Bangladesh
   var bdInfo = BdInfo.basicInfo;
   print(bdInfo.toString());
-}
 
-```
-
-* Get All Divisions
-
-```dart
-void main() {
+  //Get All Divisions
   List<Division> divisions = BdInfo.allDivisions;
-  print('Divisions in Bangladesh: $divisions');
-}
-```
 
-* Get All Districts
-
-```dart
-void main() {
+  //Get All Districts
   List<District> districts = BdInfo.allDistricts;
-  print('Districts in Bangladesh: $districts');
-}
-```
 
-* Get All Upazillas
-
-```dart
-void main() {
+  //Get All Upazillas
   List<Upazila> upazilas = BdInfo.allUpazilas;
-  print('Upazilas in Bangladesh: $upazilas');
-}
-```
 
-* Get Districts by Division
-
-```dart
-void main() {
+  //Get Districts by Division
   Division division = BdInfo.allDivisions.first;
   List<District> allDistrictsByDivision = division.allDistricts;
-  print('Districts in ${division.name} Division: $allDistrictsByDivision');
-}
-```
 
-* Get Upazillas by Division
-
-```dart
-void main() {
-  Division division = BdInfo.allDivisions.first;
+  //Get Upazillas by Division
   List<Upazila> allUpazilasByDivision = division.allUpazilas;
-  print('Upazilas in ${division.name} Division: $allUpazilasByDivision');
-}
 
-```
-
-* Get Upazillas by District
-
-```dart
-void main() {
+  //Get Upazillas by District
   District district = BdInfo.allDistricts.first;
   List<Upazila> allUpazilasByDistrict = district.allUpazilas;
-  print('Upazilas in ${district.name} District: $allUpazilasByDistrict');
-}
 
-```
-
-* Get Division by District
-
-```dart
-void main() {
-  District district = BdInfo.allDistricts.first;
+  //Know which division given district belongs to
   Division whichDivision = BdInfo.whichDivision(district);
-  print('${district.name} is in ${whichDivision.name} Division');
-}
 
-```
-
-* Get District by Upazilla
-
-```dart
-void main() {
-  Upazila upazila = BdInfo.allUpazilas.first;
+  //know which District given Upazilla belongs to
   District whichDistrict = BdInfo.whichDistrict(upazila);
-  print('${upazila.name} is in ${whichDistrict.name} District');
 }
-
 ```
+
+
+
 
 
 # Contributing

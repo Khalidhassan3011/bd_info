@@ -4,15 +4,17 @@ This Dart package provides structured data about the administrative divisions of
 
 ## Features
 
-- Get the basic information of Bangladesh
-- Retrieve the list of all divisions in Bangladesh.
-- Retrieve the list of all districts in Bangladesh.
-- Retrieve the list of all upazilas in Bangladesh.
-- Retrieve the list of districts for a given division.
-- Retrieve the list of upazilas for a given division.
-- Retrieve the list of upazilas for a given district.
-- Check which division a specific district belongs to.
-- Check which district a specific upazila belongs to.
+| Feature                                   | Android |  iOS  |
+| :---------------------------------------- | :-----: | :---: |
+| Get basic information about Bangladesh    |   ✅    |  ✅   |
+| Retrieve all divisions                    |   ✅    |  ✅   |
+| Get all districts                         |   ✅    |  ✅   |
+| Retrieve all upazilas                     |   ✅    |  ✅   |
+| Get districts by division                 |   ✅    |  ✅   |
+| Retrive upazilas by division              |   ✅    |  ✅   |
+| Get upazilas by district                  |   ✅    |  ✅   |
+| Retrieve division by district             |   ✅    |  ✅   |
+| Get district by upazila                   |   ✅    |  ✅   |
 
 
 ## Installation

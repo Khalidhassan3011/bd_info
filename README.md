@@ -1,6 +1,7 @@
-# BD_Info
+# BdInfo
 
-This Dart package provides structured data about the administrative divisions of Bangladesh. It includes information such as division names, ISO codes, establishment years, demographic statistics, and geographic details. This package is designed to facilitate easy access to essential data points for developers working with geographic and demographic data related to Bangladesh.
+`BdInfo` is a Dart package that provides information about the divisions, districts, and upazilas of Bangladesh. It is designed to be simple and easy to use, allowing developers to quickly access and utilize the information in their applications.
+
 
 ## Features
 
@@ -16,6 +17,8 @@ This Dart package provides structured data about the administrative divisions of
 | Retrieve division by district             |   ✅    |  ✅   |
 | Get district by upazila                   |   ✅    |  ✅   |
 
+Many more features are being developed such as thanas under different districts and divisions.
+
 
 ## Installation
 
@@ -26,15 +29,6 @@ dependencies:
   bd_info: ^1.0.0
 ```
 
-Then, run the generator.
-
-```sh
-# dart
-dart pub run build_runner build
-
-# flutter	
-flutter pub run build_runner build
-```
 
 ## Usage
 
@@ -81,12 +75,10 @@ void main() {
 ```
 
 # Bugs or Requests
-Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [issue](https://github.com/Khalidhassan3011/bd_info).Pull request are also welcome.
+Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [issue](https://github.com/Khalidhassan3011/bd_info/issues/new).Pull request are also welcome.
 
 ## Contributors 
 
 <a href="https://github.com/Khalidhassan3011/bd_info/graphs/contributors"><img src="https://avatars.githubusercontent.com/u/126274619?s=40&u=616ca9dc589c272ad73af9d4f67b41c364fa876c&v=4" /></a>
 
-
-
-Contributions of any kind welcome!
+Contributions of any kind are welcome!

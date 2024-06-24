@@ -80,9 +80,5 @@ void main() {
 }
 ```
 
-
-
-
-
-# Contributing
-Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an issue on the [GitHub repository](https://github.com/Khalidhassan3011/bd_info)
+# Bugs or Requests
+Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [Issue](https://github.com/Khalidhassan3011/bd_info). 

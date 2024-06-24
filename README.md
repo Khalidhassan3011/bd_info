@@ -75,7 +75,7 @@ void main() {
 ```
 
 # Bugs or Requests
-Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [issue](https://github.com/Khalidhassan3011/bd_info/issues/new).Pull request are also welcome.
+Contributions to improve and expand this package are welcome! If you have suggestions, bug reports, or feature requests, please open an [issue](https://github.com/Khalidhassan3011/bd_info/issues/new). Pull request are also welcome.
 
 ## Contributors 
 

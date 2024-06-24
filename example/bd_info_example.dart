@@ -32,5 +32,5 @@ void main() {
   Division whichDivision = BdInfo.whichDivision(district);
 
   //know which District given Upazilla belongs to
-  District whichDistrict = BdInfo.whichDistrict(upazila);
+  District whichDistrict = BdInfo.whichDistrict(upazilas);
 }

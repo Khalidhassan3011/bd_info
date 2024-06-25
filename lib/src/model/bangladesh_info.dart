@@ -1,3 +1,8 @@
+
+/// [_BangladeshInfo] is a class that encapsulates various information about Bangladesh,
+/// including basic information, religious information, currency and timezone details,
+/// and demographic and geographic statistics.
+
 part of '../bd_info.dart';
 
 class _BangladeshInfo {
@@ -76,6 +81,10 @@ class _BangladeshInfo {
   // Population density
   int density;
 
+
+  //Constructor for [_BangladeshInfo] class
+  //Initializes all fields with default values if not provided.
+  // If [religion] and [allReligions] are not provided, defaults are used for religion details.
 
   _BangladeshInfo({
     this.fullName = "People's Republic of Bangladesh",
@@ -179,6 +188,7 @@ class _BangladeshInfo {
 
 // This class represents information about a religion,
 // including its name, name in Bangla, and percentage in a population.
+
 class _Religion {
   String name;
   String nameBangla;

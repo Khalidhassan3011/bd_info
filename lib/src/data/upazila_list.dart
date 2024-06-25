@@ -1,3 +1,21 @@
+/// This part of '../bd_info.dart' defines a static list of Upazila objects representing
+/// various sub-districts (upazilas) in Bangladesh.
+///
+/// Purpose:
+/// The _UpazilaList class encapsulates a static list [upazilas] containing Upazila objects,
+/// each representing a specific sub-district in Bangladesh. Each Upazila object includes
+/// details such as its name (in English and Bangla), associated division, and district.
+///
+/// Functionality:
+/// This list serves as a predefined dataset of upazilas, facilitating efficient access
+/// to information about these administrative units without the need for external data fetching
+/// or recreation.
+///
+/// Usage:
+/// Developers can reference this list to obtain static information about upazilas across
+/// different divisions and districts in Bangladesh. The list provides a ready-made dataset
+/// for applications requiring such administrative data, enhancing performance and ease of use.
+
 part of '../bd_info.dart';
 
 class _UpazilaList {

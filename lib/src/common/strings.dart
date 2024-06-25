@@ -1,3 +1,5 @@
+
+/// This file contains all necessary constant strings for the package
 // errors
 const String invalidModel = "Invalid model. please follow the documentaion";
 

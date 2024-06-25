@@ -1,3 +1,22 @@
+/// [bd_info_test] provides utility methods to test the functionalities of the package
+///
+/// Purpose:
+/// This class is yo test and verify various aspects of the bd_info library,
+///
+/// Functionality:
+/// - Basic Information Verification: Tests ensure that basic information about Bangladesh
+/// is correctly defined and meets expected criteria
+///
+/// - Division List Verification:  Checks include verifying the total number of divisions,
+/// summing districts, upazilas, union councils, area, and population across divisions
+/// to match the basic information provided.
+///  District List Verification
+///  Upazilla List Verification
+///
+/// Usage:
+/// Developers can utilize these tests to ensure accurate data representation
+/// and calculations within the Bangladesh information library.
+
 import 'dart:math';
 
 import 'package:bd_info/bd_info.dart';
@@ -9,6 +28,8 @@ import 'package:test/test.dart';
 void main() {
   var basicInfo = BdInfo.basicInfo;
 
+  // Test to verify basic information
+
   test("Verify basic info", () {
     final propertiesToCheck = [
       basicInfo.totalDivisions,
@@ -19,6 +40,7 @@ void main() {
       basicInfo.population,
     ];
 
+    // Validate basic properties
     for (var value in propertiesToCheck) {
       expect(value, isNonZero);
       expect(value, isNonNegative);
@@ -26,11 +48,14 @@ void main() {
     }
   });
 
+  // Group to verify Division list data
   group('Verify Division list data', () {
     test("division data length == basic info total division", () {
       expect(BdInfo.allDivisions.length, basicInfo.totalDivisions);
     });
 
+
+    // Test to validate sum of district data from divisions
     test("sum of district form division data == basic info total district", () {
       int totalDistrictsFromDivisionList = BdInfo.allDivisions.fold(
           0, (previousValue, item) => previousValue + item.totalDistricts);
@@ -38,6 +63,8 @@ void main() {
       expect(totalDistrictsFromDivisionList, basicInfo.totalDistricts);
     });
 
+
+    // Test to validate sum of upazila data from divisions
     test("sum of upazila form division data == basic info total upazila", () {
       int totalUpazilasFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.toalUpazilas);
@@ -45,6 +72,7 @@ void main() {
       expect(totalUpazilasFromDivisionList, basicInfo.toalUpazilas);
     });
 
+    // Test to validate sum of union data from divisions
     test("sum of union form division data == basic info total union", () {
       int totalUnionCouncilsFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.totalUnion);
@@ -52,6 +80,7 @@ void main() {
       expect(totalUnionCouncilsFromDivisionList, basicInfo.totalUnion);
     });
 
+    // Test to validate sum of area data from divisions
     test("sum of area form division data == basic info total area", () {
       double areaFromDivisionList = BdInfo.allDivisions
           .fold(0, (previousValue, item) => previousValue + item.area);
@@ -59,6 +88,7 @@ void main() {
       expect(areaFromDivisionList, basicInfo.area);
     });
 
+    // Test to validate sum of population data from divisions
     test("sum of population form division data == basic info total population",
         () {
       int populationFromDivisionList = BdInfo.allDivisions
@@ -69,11 +99,14 @@ void main() {
   });
 
 
+  // Group to verify District list data
   group('Verify District list data', () {
     test("district data length == basic info total district", () {
       expect(BdInfo.allDistricts.length, basicInfo.totalDistricts);
     });
 
+
+    // Test to filter districts by division and validate count
     test(
       "filter district by division form district data == total district form division",
       () {
@@ -87,6 +120,7 @@ void main() {
       },
     );
 
+    // Test to sum upazilas from districts by division and validate count
     test(
       "sum of upazila from filter district by division form district data == total upazila form division",
       () {
@@ -104,6 +138,7 @@ void main() {
     );
   });
 
+  // Test case to check extension on divisions for allDistricts
   test("check extension on division for allDistricts", () {
     for (Division division in BdInfo.allDivisions) {
       int countTotalUpazilas = division.allDistricts
@@ -123,11 +158,13 @@ void main() {
     }
   });
 
+  // Group to verify Upazila list data
   group('Verify upazila list data', () {
     test("upazila data length == basic info total upazila", () {
       expect(BdInfo.allUpazilas.length, basicInfo.toalUpazilas);
     });
 
+    // Test to filter upazilas by division and validate count
     test(
         "filter upazila by division form upazila data == total upazila from division",
         () {
@@ -140,6 +177,7 @@ void main() {
       }
     });
 
+    // Test to filter upazilas by district and validate count
     test(
         "filter upazila by district form upazila data == total upazila from district",
         () {
@@ -153,6 +191,7 @@ void main() {
     });
   });
 
+  // Test case to check extension on districts
   test("check extension on district for allUpoazilas", () {
     for (District district in BdInfo.allDistricts) {
       List<Upazila> countTotalUpazilas = district.allUpazilas
@@ -163,6 +202,7 @@ void main() {
     }
   });
 
+  // Test case to check whichDivision function
   test("check whichDivision function", () {
 
     // filter By Division
@@ -201,6 +241,8 @@ void main() {
 
   });
 
+
+  // Test case to check whichDivision function
   test("check whichDivision function", () {
 
     // filter by district

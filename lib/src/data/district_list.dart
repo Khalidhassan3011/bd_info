@@ -1,3 +1,26 @@
+/// [_DistrictList] provides a static list of predefined District objects
+/// representing various districts of Bangladesh.
+///
+/// Purpose:
+/// This class defines a static list [districts] of District objects,
+/// each representing a distinct district in Bangladesh.
+///
+/// Functionality:
+/// The districts list includes detailed information about each district,
+/// such as its name (in English and Bangla),
+/// division it belongs to,
+/// total number of upazilas (sub-districts),
+/// total number of villages,
+/// and area in square kilometers.
+///
+/// Usage:
+/// Developers can utilize this static list to access comprehensive
+/// data about Bangladesh's districts without needing to retrieve
+/// or recreate this data from an external source. This makes it efficient
+/// for applications that require static district information.
+///
+/// Note: This file is part of the '../bd_info.dart' library.
+
 part of '../bd_info.dart';
 
 class _DistrictList {
